@@ -1,0 +1,33 @@
+use("platzi_store")
+
+// .drop() deletes all the docs from a given collection
+db.products.drop()
+
+// Insert several docs with just one step 
+db.products.insertMany([
+  {
+    _id: 1,
+    name: "Product 1",
+    price: 100
+  },
+  {
+    _id: 2,
+    name: "Product 1",
+    price: 20
+  },
+  {
+    _id: 1,
+    name: "Product 1",
+    price: 120
+  },
+  {
+    _id: 4,
+    name: "Product 4",
+    price: 400
+  }
+], {
+  // If there are errors, it will skip it
+  ordered: false
+})
+
+db.products.find()
